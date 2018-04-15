@@ -3,10 +3,10 @@ Bilingual poker game programmed in Java by using the JavaFX graphical interface 
 
 ## Screenshots
 
-![Main Menu](https://raw.githubusercontent.com/BenJeau/Poker/master/Screenshots/Main%20Menu.PNG)
+![Main Menu](https://raw.githubusercontent.com/BenJeau/JavaFX-Poker/master/Screenshots/Main%20Menu.PNG)
 
-![Name](https://raw.githubusercontent.com/BenJeau/Poker/master/Screenshots/Name.PNG)
-![Board](https://raw.githubusercontent.com/BenJeau/Poker/master/Screenshots/Board.PNG)
-![Manuel](https://raw.githubusercontent.com/BenJeau/Poker/master/Screenshots/Manual.PNG)
+![Name](https://raw.githubusercontent.com/BenJeau/JavaFX-Poker/master/Screenshots/Name.PNG)
+![Board](https://raw.githubusercontent.com/BenJeau/JavaFX-Poker/master/Screenshots/Board.PNG)
+![Manuel](https://raw.githubusercontent.com/BenJeau/JavaFX-Poker/master/Screenshots/Manual.PNG)
 
 Please note I do not own any of the images or sounds 
