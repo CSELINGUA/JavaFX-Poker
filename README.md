@@ -9,4 +9,4 @@ Bilingual poker game programmed in Java by using the JavaFX graphical interface 
 ![Board](https://raw.githubusercontent.com/BenJeau/JavaFX-Poker/master/Screenshots/Board.PNG)
 ![Manuel](https://raw.githubusercontent.com/BenJeau/JavaFX-Poker/master/Screenshots/Manual.PNG)
 
-Please note I do not own any of the images or sounds 
+Please note, I do not own any of the images or sounds 
