@@ -8,7 +8,7 @@ import java.util.Map;
 
 public class Evaluation {
 
-	// Vérifie si les cartes se suivent
+	// VÃ©rifie si les cartes se suivent
 	private static Boolean royalStraighFlush = false;
 
 	// Nombre de cartes par rapport aux sortes
@@ -18,19 +18,19 @@ public class Evaluation {
 	private static int number = 0;
 	private static String kind = "";
 
-	// Entrepose les valeurs des cartes en ordre (un qui répète et l'autre non)
+	// Entrepose les valeurs des cartes en ordre (un qui rÃ©pÃ¨te et l'autre non)
 	private static ArrayList<Integer> straightRepeat, straightNoRepeat;
 	
 	// Entrepose la sorte de main la plus haute
 	private static String win;
 
-	// Listes des numéros des sortes de cartes
+	// Listes des numÃ©ros des sortes de cartes
 	private static ArrayList<Integer> clubs, spades, hearts, diamonds;
 	
 	// Liste principale, les total cartes joueurs
 	private static ArrayList<Integer> cartes;
 	
-	// Pour créer la liste straightNoRepeat && trouver la somme
+	// Pour crÃ©er la liste straightNoRepeat && trouver la somme
 	private static int current, count = 0, sum = 0;
 	private static LinkedHashSet<Integer> set;
 	
@@ -38,12 +38,12 @@ public class Evaluation {
 	private static Map<String, Integer> map;
 	private static String[] names;
 	
-	// Ce qui est retourné lorsque la fonction est appelé
+	// Ce qui est retournÃ© lorsque la fonction est appelÃ©
 	private static String[] turn;
 	
 	public static String[] evaluate(ArrayList<Integer> player, ArrayList<Integer> dealer) {
 
-		// Crée un 'ArrayList' des cartes pour le joueur
+		// CrÃ©e un 'ArrayList' des cartes pour le joueur
 		cartes = new ArrayList<Integer>();
 		cartes.addAll(player);
 		cartes.addAll(dealer);
@@ -51,7 +51,7 @@ public class Evaluation {
 		// Trie le ArrayList en ordre croissant
 		Collections.sort(cartes);
 
-		// Définie les cartes et leurs sortes
+		// DÃ©finie les cartes et leurs sortes
 		clubs = new ArrayList<Integer>();
 		spades = new ArrayList<Integer>();
 		hearts = new ArrayList<Integer>();
@@ -63,7 +63,7 @@ public class Evaluation {
 			diamonds.add(39 + i);
 		}
 
-		// Vérifie le nombre de cartes de chaque sorte
+		// VÃ©rifie le nombre de cartes de chaque sorte
 		for (int i = 0; i <= 12; i++) {
 			if (cartes.contains(clubs.get(i))) {
 				clubsNumber = clubsNumber + 1;
@@ -79,7 +79,7 @@ public class Evaluation {
 			}
 		}
 
-		// Détermine quel sorte de cartes retrouvé le plus
+		// DÃ©termine quel sorte de cartes retrouvÃ© le plus
 		if (number < clubsNumber) {
 			number = clubsNumber;
 			kind = "clubs";
@@ -97,7 +97,7 @@ public class Evaluation {
 			kind = "diamonds";
 		}
 
-		// Vérifie si les cartes se suivent
+		// VÃ©rifie si les cartes se suivent
 		if (number >= 5) {
 			for (int i = 0; i < cartes.size() - 2; i++) {
 				try {
@@ -133,7 +133,7 @@ public class Evaluation {
 			sum = sum + current;
 		}
 
-		// Enlève Removes duplicates in the set && puts them back in a ArrayList
+		// EnlÃ¨ve Removes duplicates in the set && puts them back in a ArrayList
 		set = new LinkedHashSet<Integer>();
 		set.addAll(straightRepeat);
 		straightNoRepeat = new ArrayList<Integer>();
@@ -154,7 +154,7 @@ public class Evaluation {
 		}
 
 		main: while (true) {
-			// Détermine si c'est un royal flush on une straight flush
+			// DÃ©termine si c'est un royal flush on une straight flush
 			if (royalStraighFlush) {
 				if (String.valueOf(kind).equals("clubs")) {
 					if (cartes.contains(13)) {
@@ -184,7 +184,7 @@ public class Evaluation {
 				break main;
 			}
 
-			// Détermine si c'est un four of a kind
+			// DÃ©termine si c'est un four of a kind
 			for (String e : names) {
 				if (map.get(e) == 4) {
 					hand = Integer.valueOf(e) * 4;
@@ -193,7 +193,7 @@ public class Evaluation {
 				}
 			}
 
-			// Détermine si c'est un full house
+			// DÃ©termine si c'est un full house
 			for (String e : names) {
 				if (map.get(e) == 3) {
 					for (String f : names) {
@@ -206,7 +206,7 @@ public class Evaluation {
 				}
 			}
 
-			// Détermine si c'est un flush
+			// DÃ©termine si c'est un flush
 			if (number >= 5) {
 				int i = 0;
 				if (String.valueOf(kind).equals("clubs")){
@@ -226,7 +226,7 @@ public class Evaluation {
 				break main;
 			}
 
-			// Détermine si c'est une suite
+			// DÃ©termine si c'est une suite
 			if (straightNoRepeat.size() >= 5) {
 				for (int i = 0; i < straightNoRepeat.size() - 2; i++) {
 					try {
@@ -248,7 +248,7 @@ public class Evaluation {
 				}
 			}
 
-			// Détermine si c'est un deux paires
+			// DÃ©termine si c'est un deux paires
 			for (String e : names) {
 				if (map.get(e) >= 2) {
 					for (String f : names) {
@@ -261,7 +261,7 @@ public class Evaluation {
 				}
 			}
 
-			// Détermine si c'est un three of a kind
+			// DÃ©termine si c'est un three of a kind
 			for (String e : names) {
 				if (map.get(e) == 3) {
 					hand = Integer.valueOf(e) * 3;
@@ -270,7 +270,7 @@ public class Evaluation {
 				}
 			}
 
-			// Détermine si c'est une pair
+			// DÃ©termine si c'est une pair
 			for (String e : names) {
 				if (map.get(e) == 2) {
 					hand = Integer.valueOf(e) * 2;
@@ -279,14 +279,14 @@ public class Evaluation {
 				}
 			}
 
-			// Détermine s'il y a rien
+			// DÃ©termine s'il y a rien
 			hand = sum;
 			win = "highCards";
 			break main;
 
 		}
 
-		// Ce qui est retourné lorsque la fonction est appelé
+		// Ce qui est retournÃ© lorsque la fonction est appelÃ©
 		turn = new String[] { win, String.valueOf(sum), String.valueOf(hand) };
 		clear();
 		return turn;
@@ -294,7 +294,7 @@ public class Evaluation {
 
 	private static int hand = 0;;
 
-	// Rétablie tous les variables pour que cette fonction soit réutilisable
+	// RÃ©tablie tous les variables pour que cette fonction soit rÃ©utilisable
 	public static void clear() {
 		set.clear();
 		straightNoRepeat.clear();

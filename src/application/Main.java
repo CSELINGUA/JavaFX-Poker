@@ -25,7 +25,7 @@ public class Main extends Application {
 	@Override
 	public void start(Stage primaryStage) {
 
-		// Déclaration de multiples variables importantes
+		// DÃ©claration de multiples variables importantes
 		main = new Engl();
 		fran = new Fran();
 		verification = new Stage();
@@ -41,8 +41,8 @@ public class Main extends Application {
 			verification.show();
 		});
 
-		// Button français
-		french = new Button("Français");
+		// Button franÃ§ais
+		french = new Button("FranÃ§ais");
 		french.setLayoutY(80);
 		french.setLayoutX(30);
 		french.setOnAction(e -> {
@@ -51,7 +51,7 @@ public class Main extends Application {
 		});
 
 		// 'Label' de risque
-		risk = new Label("Veux-tu vraiment\nrisquer la chance\nde perdre ton\nfrançais??");
+		risk = new Label("Veux-tu vraiment\nrisquer la chance\nde perdre ton\nfranÃ§ais??");
 		risk.setLayoutX(15);
 
 		// Button oui
@@ -73,7 +73,7 @@ public class Main extends Application {
 		non.setLayoutX(135);
 		non.setLayoutY(135);
 
-		// Création de la page de vérification
+		// CrÃ©ation de la page de vÃ©rification
 		root2.getChildren().addAll(risk, yes, non);
 		verification.setTitle("NON!");
 		verification.setScene(new Scene(root2, 230, 190));
@@ -87,7 +87,7 @@ public class Main extends Application {
 		applicationIcon = new Image(getClass().getResourceAsStream("poker.png"));
 		primaryStage.getIcons().add(applicationIcon);
 
-		// Lien du CSS pour l'application && définie les 'ID' pour les objets
+		// Lien du CSS pour l'application && dÃ©finie les 'ID' pour les objets
 		Application.setUserAgentStylesheet(getClass().getResource("application.css").toExternalForm());
 		yes.setId("no");
 		language.setId("lang1");
@@ -95,7 +95,7 @@ public class Main extends Application {
 		root2.setId("back");
 		root1.setId("back");
 		
-		// Création de la page principale
+		// CrÃ©ation de la page principale
 		root1.getChildren().addAll(language, french, anglais);
 		scene = new Scene(root1, 230, 140);
 		primaryStage.setScene(scene);
@@ -103,7 +103,7 @@ public class Main extends Application {
 		primaryStage.setResizable(false);
 		primaryStage.show();
 
-		// 'Stage' vais être toujours centré
+		// 'Stage' vais Ãªtre toujours centrÃ©
 		bounds = Screen.getPrimary().getVisualBounds();
 		primaryStage.setX((bounds.getWidth() - primaryStage.getWidth()) / 2);
 		primaryStage.setY((bounds.getHeight() - primaryStage.getHeight()) / 2);

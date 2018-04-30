@@ -32,14 +32,14 @@ public class Engl extends Application {
 	// Icon de l'application
 	private Image applicationIcon;
 
-	// Éléments du menu principal
+	// Ã‰lÃ©ments du menu principal
 	private Stage stage;
 	private Button comp, net;
 	private Label title;
 	private Pane root;
 	private Scene mainScene;
 
-	// Éléments de la scène d'enregistration de nom
+	// Ã‰lÃ©ments de la scÃ¨ne d'enregistration de nom
 	private Label label2, label3;
 	private TextField textField1, textField2;
 	private Button next, back;
@@ -49,7 +49,7 @@ public class Engl extends Application {
 	// Noms des joueurs
 	private String player1Name, player2Name;
 
-	// Éléments du manuel
+	// Ã‰lÃ©ments du manuel
 	private Image manualIcon;
 	private ImageView manualChipRed, manualChipBlack, manualChipWhite, manualChipGreen, manualChipBlue;
 	private Stage manualStage;
@@ -68,17 +68,17 @@ public class Engl extends Application {
 	// TextField to raise or to bet
 	private TextField raiseAmount;
 
-	// Nombre aléatoire
+	// Nombre alÃ©atoire
 	private int rand;
 
 	// Son des buttons
 	private MediaPlayer buttonSound;
 
-	// Deuxième fenêtre
+	// DeuxiÃ¨me fenÃªtre
 	private Stage player2stage;
 	private Scene playe2scene;
 
-	// Montre/Enlève l'option de miser/augmenter
+	// Montre/EnlÃ¨ve l'option de miser/augmenter
 	private int raiseId = 1;
 
 	// Conteurs
@@ -131,48 +131,48 @@ public class Engl extends Application {
 	private int unites, dizaines, centaines, mille;
 	private int value;
 
-	// Coût minimum du depart
+	// CoÃ»t minimum du depart
 	private int bet = 10;
 
 	// Montant d'argent des joueurs
 	private Map<String, Integer> map8;
 
-	// Expérimentation (click sur jeton pour diminuer jetons)
+	// ExpÃ©rimentation (click sur jeton pour diminuer jetons)
 	private Map<String, ImageView> map10;
 
-	// Détermine si leur tour a déjà été passé
+	// DÃ©termine si leur tour a dÃ©jÃ  Ã©tÃ© passÃ©
 	private Boolean player2turn = true, player1turn = true;
 
 	// Observer si le joueur veux aller/jouer encore
 	private Boolean click1 = false, click2 = false;
 
-	// Détermine si check ou fill devrait être utilisé (fill c'est toujours le 2e)
+	// DÃ©termine si check ou fill devrait Ãªtre utilisÃ© (fill c'est toujours le 2e)
 	private Boolean check;
 
 	// Son lorsque tu tapes
 	private MediaPlayer writeSound;
 
-	// Pour aller à la première scène
+	// Pour aller Ã  la premiÃ¨re scÃ¨ne
 	private Main demande;
 
 	// Aide pour changer de tour
 	private int p1 = limit, p2 = limit;
 
-	// Détermine si le button a été activé
+	// DÃ©termine si le button a Ã©tÃ© activÃ©
 	private Boolean checkOff1 = true, checkOff2 = true, betOff1 = true, betOff2 = true, callOff1 = true,
 			callOff2 = true, raiseOff2 = true;
 
-	// Le point de départ de l'application
+	// Le point de dÃ©part de l'application
 	@Override
 	public void start(Stage primaryStage) {
 
-		// Pour changer de scène
+		// Pour changer de scÃ¨ne
 		demande = new Main();
 
 		// Son pour jeter
 		swoosh = new MediaPlayer(new Media(new File("swoosh.mp3").toURI().toString()));
 
-		// Déclaration de multiples variables importantes
+		// DÃ©claration de multiples variables importantes
 		root = new Pane();
 		stage = primaryStage;
 		title = new Label("Texas Holdem Poker");
@@ -215,7 +215,7 @@ public class Engl extends Application {
 			MediaPlayer md1 = new MediaPlayer(new Media(new File("type.mp3").toURI().toString()));
 			// Joue un son lorsque tu tape
 			md1.play();
-			// Rends la première majuscule
+			// Rends la premiÃ¨re majuscule
 			if (textField1.getText().length() == 1) {
 				textField1.setText(newValue.toUpperCase());
 			}
@@ -230,7 +230,7 @@ public class Engl extends Application {
 			MediaPlayer md1 = new MediaPlayer(new Media(new File("type.mp3").toURI().toString()));
 			// Joue un son lorsque tu tape
 			md1.play();
-			// Rends la première majuscule
+			// Rends la premiÃ¨re majuscule
 			if (textField2.getText().length() == 1) {
 				textField2.setText(newValue.toUpperCase());
 			}
@@ -261,7 +261,7 @@ public class Engl extends Application {
 			play();
 		});
 
-		// Single player -- En développement
+		// Single player -- En dÃ©veloppement
 		networkPane = new Pane();
 		Label dev = new Label("Under");
 		Label dev1 = new Label("developement");
@@ -284,7 +284,7 @@ public class Engl extends Application {
 
 		});
 
-		// Quand la touche ENTER est touché, change de textField
+		// Quand la touche ENTER est touchÃ©, change de textField
 		textField1.setOnKeyPressed(new EventHandler<KeyEvent>() {
 
 			public void handle(KeyEvent ke) {
@@ -295,7 +295,7 @@ public class Engl extends Application {
 			}
 		});
 
-		// Quand la touche ENTER est touché, change de scène
+		// Quand la touche ENTER est touchÃ©, change de scÃ¨ne
 		textField2.setOnKeyPressed(new EventHandler<KeyEvent>() {
 			public void handle(KeyEvent ke) {
 				if (ke.getCode().equals(KeyCode.ENTER)) {
@@ -330,7 +330,7 @@ public class Engl extends Application {
 		raiseAmount.setLayoutY(588);
 		raiseAmount.setPrefWidth(90);
 
-		// Fait appel à de multiple fonctions
+		// Fait appel Ã  de multiple fonctions
 		variables();
 		numberPanes();
 		buttons();
@@ -350,7 +350,7 @@ public class Engl extends Application {
 		map3.get("player1raise").setDisable(true);
 		map3.get("player1call").setDisable(true);
 
-		// Lien du CSS pour l'application && définie les ID's pour les objets
+		// Lien du CSS pour l'application && dÃ©finie les ID's pour les objets
 		root.setId("back");
 		title.setId("mainTitle");
 		textField2.setId("field");
@@ -364,12 +364,12 @@ public class Engl extends Application {
 		explanation1.setId("dollars");
 		Application.setUserAgentStylesheet(getClass().getResource("application.css").toExternalForm());
 
-		// Création de la page principale
+		// CrÃ©ation de la page principale
 		root.getChildren().addAll(net, comp, title);
 		mainScene = new Scene(root, 215, 156);
 		mainScene.setOnKeyPressed(new EventHandler<KeyEvent>() {
 
-			// Détermine ce que les touche sur le clavier font
+			// DÃ©termine ce que les touche sur le clavier font
 			public void handle(KeyEvent ke) {
 				if (ke.getCode().equals(KeyCode.DOWN)) {
 					net.requestFocus();
@@ -420,9 +420,9 @@ public class Engl extends Application {
 		writeSound.play();
 	}
 
-	// Expérimentation --- BETA (N'évalue pas cette fonction)
+	// ExpÃ©rimentation --- BETA (N'Ã©value pas cette fonction)
 	public void check() {
-		// Place les buttons sur les côtés
+		// Place les buttons sur les cÃ´tÃ©s
 		map10 = new HashMap<String, ImageView>();
 		String[] test = new String[] { "white", "red", "blue", "green", "black" };
 		int[] test1 = new int[] { 500, 540, 580, 620, 660 };
@@ -455,9 +455,9 @@ public class Engl extends Application {
 		}
 	}
 
-	// Restrictions du texte entré dans raiseAmount
+	// Restrictions du texte entrÃ© dans raiseAmount
 	public void textRestrictions() {
-		// Vérifie chaque fois textField raiseAmount est changé
+		// VÃ©rifie chaque fois textField raiseAmount est changÃ©
 		raiseAmount.lengthProperty().addListener(new ChangeListener<Number>() {
 
 			@Override
@@ -467,13 +467,13 @@ public class Engl extends Application {
 
 					char ch = raiseAmount.getText().charAt(oldValue.intValue());
 
-					// Vérifie 
+					// VÃ©rifie 
 					if (!(ch >= '0' && ch <= '9')) {
-						// Si ce n'est pas un nombre, remplace ce caractère avec le précédent
+						// Si ce n'est pas un nombre, remplace ce caractÃ¨re avec le prÃ©cÃ©dent
 						raiseAmount.setText(raiseAmount.getText().substring(0, raiseAmount.getText().length() - 1));
 					}
 
-					// Enlève l'avertissement
+					// EnlÃ¨ve l'avertissement
 					if (checkWarning == false) {
 						map6.get("player" + playerId + "pane").getChildren().removeAll(map4.get("warning"));
 						checkWarning = true;
@@ -496,7 +496,7 @@ public class Engl extends Application {
 
 		});
 
-		// Vérifie si ENTER a été actionné
+		// VÃ©rifie si ENTER a Ã©tÃ© actionnÃ©
 		raiseAmount.setOnKeyPressed(new EventHandler<KeyEvent>() {
 			public void handle(KeyEvent ke) {
 				if (ke.getCode().equals(KeyCode.ENTER)) {
@@ -506,26 +506,26 @@ public class Engl extends Application {
 						// S'il y a rien, mets la mise
 						raiseAmount.setText(String.valueOf(bet));
 					} else if (Integer.valueOf(raiseAmount.getText()) > limit && checkWarning) {
-						// Vérifie si le nouveau montant est plus que la
+						// VÃ©rifie si le nouveau montant est plus que la
 						// limite
 						raiseAmount.setText(String.valueOf(limit));
 						map6.get("player" + playerId + "pane").getChildren().addAll(map4.get("warning"));
 						checkWarning = false;
 					} else if (Integer.valueOf(raiseAmount.getText()) < bet && checkWarning1) {
-						// Vérifie si le nouveau montant est plus que la mise
+						// VÃ©rifie si le nouveau montant est plus que la mise
 						raiseAmount.setText(String.valueOf(bet));
 						map4.get("warning1").setText("The minimum is " + bet);
 						map6.get("player" + playerId + "pane").getChildren().addAll(map4.get("warning1"));
 						checkWarning1 = false;
 					} else if (playerId == 1 && Integer.valueOf(raiseAmount.getText()) < player2value
 							&& player2turn == false) {
-						// Vérifie si le nouveau montant est plus que la limite
+						// VÃ©rifie si le nouveau montant est plus que la limite
 						raiseAmount.setText(String.valueOf(player2value));
 						map4.get("warning1").setText("The minimum is " + player2value);
 						map6.get("player" + playerId + "pane").getChildren().addAll(map4.get("warning1"));
 						checkWarning1 = false;
 					} else if (map8.get("player" + playerId + "total") <= 0) {
-						// Vérifie si le joueur a de l'argent
+						// VÃ©rifie si le joueur a de l'argent
 
 						// Joueur perd
 						if (playerId == 1) {
@@ -555,13 +555,13 @@ public class Engl extends Application {
 						}
 						
 						if (value > (map8.get("player" + playerId + "total"))) {
-							// Vérifie si le joueur peux se permette ce nouveau montant
+							// VÃ©rifie si le joueur peux se permette ce nouveau montant
 							raiseAmount.setText(String.valueOf(player2value));
 							map6.get("player" + playerId + "pane").getChildren().addAll(map4.get("tooMuch"));
 							tooMuch = false;
 						} 
 						
-						// Enlève l'avertissement
+						// EnlÃ¨ve l'avertissement
 						if (checkWarning == false) {
 							map6.get("player" + playerId + "pane").getChildren().removeAll(map4.get("warning"));
 							checkWarning = true;
@@ -579,7 +579,7 @@ public class Engl extends Application {
 							empty = true;
 						}
 
-						// Enlève le textField et le label
+						// EnlÃ¨ve le textField et le label
 						map6.get("player" + playerId + "pane").getChildren().removeAll(map4.get("help"), raiseAmount);
 
 						//
@@ -591,7 +591,7 @@ public class Engl extends Application {
 
 	}
 
-	// Fait le changement des objets sur les scènes par rapport aux actions
+	// Fait le changement des objets sur les scÃ¨nes par rapport aux actions
 	// faits
 	public void test() {
 
@@ -787,21 +787,21 @@ public class Engl extends Application {
 			}
 		}
 
-		// Mise à jour du pot
+		// Mise Ã  jour du pot
 		pot = (limit * 2) - (map8.get("player1total") + map8.get("player2total"));
 		map4.get("pot1").setText("Pot: " + pot + "$");
 		map4.get("pot2").setText("Pot: " + pot + "$");
 	}
 
-	// Appelé lorsque le tour est fini
+	// AppelÃ© lorsque le tour est fini
 	private void finish() {
 
-		// Mise à jour du pot
+		// Mise Ã  jour du pot
 		pot = (limit * 2) - (map8.get("player1total") + map8.get("player2total"));
 		map4.get("pot1").setText("Pot: " + pot + "$");
 		map4.get("pot2").setText("Pot: " + pot + "$");
 
-		// Bloque/débloque les buttons
+		// Bloque/dÃ©bloque les buttons
 		map3.get("player1fold").setDisable(true);
 		map3.get("player1call").setDisable(true);
 		map3.get("player1raise").setDisable(true);
@@ -813,13 +813,13 @@ public class Engl extends Application {
 		map3.get("player2bet").setDisable(true);
 		map3.get("player2check").setDisable(true);
 
-		// Enlève les cartes
+		// EnlÃ¨ve les cartes
 		map6.get("player2pane").getChildren().addAll(map.get("player1smallFace1"), map.get("player1smallFace2"),
 				map3.get("player2nextRound"));
 		map6.get("player1pane").getChildren().addAll(map.get("player2smallFace1"), map.get("player2smallFace2"),
 				map3.get("player1nextRound"));
 
-		// Évalue la plus haute main
+		// Ã‰value la plus haute main
 		player1 = new String[] {};
 		player1 = Evaluation.evaluate(map2.get("resultat1"), map2.get("dealerResultat"));
 		player2 = new String[] {};
@@ -828,7 +828,7 @@ public class Engl extends Application {
 		// Compare les mains des joueurs
 		String gagnant = repeat(player1[0], player2[0]);
 
-		// Mise à jour des labels de gagnant
+		// Mise Ã  jour des labels de gagnant
 		map6.get("player1pane").getChildren().removeAll(map4.get("player1turn"));
 		map6.get("player2pane").getChildren().removeAll(map4.get("player2turn"));
 		if (String.valueOf(gagnant).equals("player1")) {
@@ -845,7 +845,7 @@ public class Engl extends Application {
 		map6.get("player2pane").getChildren().addAll(map4.get("player2turn"));
 	}
 
-	// Détermine l'importance des sortes de mains
+	// DÃ©termine l'importance des sortes de mains
 	public int check(String sort) {
 		int ordre = 0;
 
@@ -879,12 +879,12 @@ public class Engl extends Application {
 		return win(check(un), check(deux));
 	}
 
-	// Compare les résultats des joueurs & détermine le gagnant
+	// Compare les rÃ©sultats des joueurs & dÃ©termine le gagnant
 	public String win(int un, int deux) {
 
 		String name = "";
 
-		// Détermine qui gagne
+		// DÃ©termine qui gagne
 		if (un > deux) {
 			name = "player2";
 		} else if (un == deux) {
@@ -915,7 +915,7 @@ public class Engl extends Application {
 			map6.get("player1pane").getChildren().add(map4.get("player1cash1"));
 			map6.get("player2pane").getChildren().add(map4.get("player1cash2"));
 
-			// Mise à jour des jetons
+			// Mise Ã  jour des jetons
 			playerId = 1;
 			value(pot);
 			add("white", unites);
@@ -939,7 +939,7 @@ public class Engl extends Application {
 			map6.get("player2pane").getChildren().add(map4.get("player2cash1"));
 			map6.get("player1pane").getChildren().add(map4.get("player2cash2"));
 
-			// Mise à jour des jetons
+			// Mise Ã  jour des jetons
 			playerId = 2;
 			value(pot);
 			add("white", unites);
@@ -952,7 +952,7 @@ public class Engl extends Application {
 			}
 		}
 
-		// Mise à jour du pot
+		// Mise Ã  jour du pot
 		pot = 0;
 		map4.get("pot1").setText("Pot : " + pot + "$");
 		map4.get("pot2").setText("Pot : " + pot + "$");
@@ -980,14 +980,14 @@ public class Engl extends Application {
 		map6.get("player2pane").getChildren().addAll(map4.get("player2turn"));
 	}
 
-	// Change les jetons par rapport au coût dans laquelle le joueur a entré
+	// Change les jetons par rapport au coÃ»t dans laquelle le joueur a entrÃ©
 	public void cost() {
 		check = true;
 
-		// Vérifie si le joueur a de l'argent
+		// VÃ©rifie si le joueur a de l'argent
 		if (map8.get("player" + playerId + "total") != 0) {
 
-			// Vérifie si le montant est plus plus petit ou égal au montant
+			// VÃ©rifie si le montant est plus plus petit ou Ã©gal au montant
 			// d'argent total
 			if (value <= (map8.get("player" + playerId + "total"))) {
 
@@ -1861,12 +1861,12 @@ public class Engl extends Application {
 			}
 		}
 
-		// Mise à jour des labels de montants
+		// Mise Ã  jour des labels de montants
 		map4.get("player" + playerId + "cash1").setText("You: " + map8.get("player" + playerId + "total") + "$");
 		map4.get("player" + playerId + "cash2").setText("Opponent: " + map8.get("player" + playerId + "total") + "$");
 	}
 
-	// Détermine les valeurs des unités/dizaines/centaines/millers
+	// DÃ©termine les valeurs des unitÃ©s/dizaines/centaines/millers
 	private void value(int number) {
 		unites = number % 10;
 		number = number - unites;
@@ -1878,7 +1878,7 @@ public class Engl extends Application {
 		number = number - mille;
 	}
 
-	// Remplis les jetons nécessaire pour les conditions prédites
+	// Remplis les jetons nÃ©cessaire pour les conditions prÃ©dites
 	private void fill() {
 		System.out.print("Fill ");
 		if (map9.get("player" + playerId + "numbersToken").get(1) != 0
@@ -1941,7 +1941,7 @@ public class Engl extends Application {
 	private void add(String name, int number) {
 		int nomb = 0;
 
-		// Détermine la sorte du jeton
+		// DÃ©termine la sorte du jeton
 		if (String.valueOf(name).equals("white")) {
 			nomb = 0;
 		} else if (String.valueOf(name).equals("red")) {
@@ -1964,14 +1964,14 @@ public class Engl extends Application {
 		}
 	}
 
-	// Diminue le nombres d'unités
+	// Diminue le nombres d'unitÃ©s
 	private void unites(int number) {
 		for (int i = 1; i <= number; i++) {
 			unites--;
 		}
 	}
 
-	// Enlève le nombre de jetons blanc (1), entré dans la fonction
+	// EnlÃ¨ve le nombre de jetons blanc (1), entrÃ© dans la fonction
 	private void one(int number) {
 		for (int i = 1; i <= number; i++) {
 			map6.get("player" + playerId + "pane").getChildren().removeAll(
@@ -1982,7 +1982,7 @@ public class Engl extends Application {
 		}
 	}
 
-	// Enlève le nombre de jetons rouge (5), entré dans la fonction
+	// EnlÃ¨ve le nombre de jetons rouge (5), entrÃ© dans la fonction
 	private void five(int number) {
 		for (int i = 1; i <= number; i++) {
 			map6.get("player" + playerId + "pane").getChildren().removeAll(
@@ -1993,7 +1993,7 @@ public class Engl extends Application {
 		}
 	}
 
-	// Enlève le nombre de jetons bleu (10), entré dans la fonction
+	// EnlÃ¨ve le nombre de jetons bleu (10), entrÃ© dans la fonction
 	private void ten(int number) {
 		for (int i = 1; i <= number; i++) {
 			map6.get("player" + playerId + "pane").getChildren().removeAll(
@@ -2004,7 +2004,7 @@ public class Engl extends Application {
 		}
 	}
 
-	// Enlève le nombre de jetons vert (25), entré dans la fonction
+	// EnlÃ¨ve le nombre de jetons vert (25), entrÃ© dans la fonction
 	private void twentyFive(int number) {
 		for (int i = 1; i <= number; i++) {
 			map6.get("player" + playerId + "pane").getChildren().removeAll(
@@ -2015,7 +2015,7 @@ public class Engl extends Application {
 		}
 	}
 
-	// Enlève le nombre de jetons noir (100), entré dans la fonction
+	// EnlÃ¨ve le nombre de jetons noir (100), entrÃ© dans la fonction
 	private void hundred(int number) {
 		for (int i = 1; i <= number; i++) {
 			map6.get("player" + playerId + "pane").getChildren().removeAll(
@@ -2026,32 +2026,32 @@ public class Engl extends Application {
 		}
 	}
 
-	// Détermine s'il y a assez de jetons blanc (1)
+	// DÃ©termine s'il y a assez de jetons blanc (1)
 	private boolean oneNumber(int number) {
 		return map9.get("player" + playerId + "numbersToken").get(0) >= number;
 	}
 
-	// Détermine s'il y a assez de jetons rouge (5)
+	// DÃ©termine s'il y a assez de jetons rouge (5)
 	private boolean fiveNumber(int number) {
 		return map9.get("player" + playerId + "numbersToken").get(1) >= number;
 	}
 
-	// Détermine s'il y a assez de jetons bleu (10)
+	// DÃ©termine s'il y a assez de jetons bleu (10)
 	private boolean tenNumber(int number) {
 		return map9.get("player" + playerId + "numbersToken").get(2) >= number;
 	}
 
-	// Détermine s'il y a assez de jetons vert (25)
+	// DÃ©termine s'il y a assez de jetons vert (25)
 	private boolean twentyFiveNumber(int number) {
 		return map9.get("player" + playerId + "numbersToken").get(3) >= number;
 	}
 
-	// Détermine s'il y a assez de jetons noir (100)
+	// DÃ©termine s'il y a assez de jetons noir (100)
 	private boolean hundredNumber(int number) {
 		return map9.get("player" + playerId + "numbersToken").get(4) >= number;
 	}
 
-	// Les fonctions nécessaires pour la fenêtre du manuel
+	// Les fonctions nÃ©cessaires pour la fenÃªtre du manuel
 	public void manual() {
 		// Les jetons (dans le bas)
 		manualChipRed = new ImageView(new Image(getClass().getResourceAsStream("rouge.png")));
@@ -2070,7 +2070,7 @@ public class Engl extends Application {
 		manualChipBlue.setLayoutX(296);
 		manualChipBlue.setLayoutY(640);
 
-		// Définie chaque button
+		// DÃ©finie chaque button
 		test = new Button("Check");
 		test.setDisable(true);
 		test.setLayoutX(15);
@@ -2120,7 +2120,7 @@ public class Engl extends Application {
 		manualPane.getChildren().addAll(test, test1, test2, test3, test4, explanation, explanation1, manualChipRed,
 				manualChipBlack, manualChipGreen, manualChipWhite, manualChipBlue);
 
-		// Pane vais toujours être centré
+		// Pane vais toujours Ãªtre centrÃ©
 		VBox vb = new VBox();
 		vb.setAlignment(Pos.CENTER);
 		HBox ap = new HBox();
@@ -2134,7 +2134,7 @@ public class Engl extends Application {
 		// Mets l'icon de l'application
 		manualIcon = new Image(getClass().getResourceAsStream("manual.png"));
 
-		// Définie la fenêtre
+		// DÃ©finie la fenÃªtre
 		manualStage = new Stage();
 		manualStage.getIcons().add(manualIcon);
 		manualStage.setScene(manualScene);
@@ -2142,7 +2142,7 @@ public class Engl extends Application {
 		manualStage.setTitle("Manual");
 	}
 
-	// Créer les layouts pour les joueurs
+	// CrÃ©er les layouts pour les joueurs
 	public void numberPanes() {
 		map6 = new HashMap<String, Pane>();
 		for (int i = 1; i <= totalPlayers; i++) {
@@ -2155,7 +2155,7 @@ public class Engl extends Application {
 		// Son
 		swoosh.play();
 
-		// Bloque/débloque les buttons
+		// Bloque/dÃ©bloque les buttons
 		map3.get("player1fold").setDisable(true);
 		map3.get("player1call").setDisable(true);
 		map3.get("player1raise").setDisable(true);
@@ -2167,7 +2167,7 @@ public class Engl extends Application {
 		map3.get("player2bet").setDisable(true);
 		map3.get("player2check").setDisable(true);
 
-		// Mise à jour des jetons
+		// Mise Ã  jour des jetons
 		playerId = 2;
 		value(pot);
 		add("white", unites);
@@ -2179,14 +2179,14 @@ public class Engl extends Application {
 			add("black", 10);
 		}
 
-		// Mise à jour des labels
+		// Mise Ã  jour des labels
 		map8.put("player2total", map8.get("player2total") + pot);
 		map4.get("player2cash1").setText("You: " + map8.get("player2total") + "$");
 		map4.get("player2cash2").setText("Opponent: " + map8.get("player2total") + "$");
 		map4.get("player1turn").setText(player2Name + " WON");
 		map4.get("player2turn").setText(player2Name + " WON");
 
-		// Mise à jour du pot
+		// Mise Ã  jour du pot
 		pot = 0;
 		map4.get("pot1").setText("Pot: " + pot + "$");
 		map4.get("pot2").setText("Pot: " + pot + "$");
@@ -2201,7 +2201,7 @@ public class Engl extends Application {
 		// Son
 		swoosh.play();
 
-		// Bloque/débloque les buttons
+		// Bloque/dÃ©bloque les buttons
 		map3.get("player1fold").setDisable(true);
 		map3.get("player1call").setDisable(true);
 		map3.get("player1raise").setDisable(true);
@@ -2213,7 +2213,7 @@ public class Engl extends Application {
 		map3.get("player2bet").setDisable(true);
 		map3.get("player2check").setDisable(true);
 
-		// Mise à jour des jetons
+		// Mise Ã  jour des jetons
 		playerId = 1;
 		value(pot);
 		add("white", unites);
@@ -2226,14 +2226,14 @@ public class Engl extends Application {
 			add("black", 10);
 		}
 
-		// Mise à jour des labels
+		// Mise Ã  jour des labels
 		map8.put("player1total", map8.get("player1total") + pot);
 		map4.get("player1cash1").setText("You: " + map8.get("player1total") + "$");
 		map4.get("player1cash2").setText("Opponent: " + map8.get("player1total") + "$");
 		map4.get("player1turn").setText(player1Name + " WON");
 		map4.get("player2turn").setText(player1Name + " WON");
 
-		// Mise à jour du pot
+		// Mise Ã  jour du pot
 		pot = 0;
 		map4.get("pot1").setText("Pot: " + pot + "$");
 		map4.get("pot2").setText("Pot: " + pot + "$");
@@ -2243,10 +2243,10 @@ public class Engl extends Application {
 		map6.get("player1pane").getChildren().addAll(map3.get("player1nextRound"));
 	}
 
-	// Définie les conditions du premier joueur
+	// DÃ©finie les conditions du premier joueur
 	public void player1Conditions() {
 
-		// Ajoute les éléments de base (au début d'une joute)
+		// Ajoute les Ã©lÃ©ments de base (au dÃ©but d'une joute)
 		map6.get("player1pane").getChildren().addAll(map.get("player1bigFace1"), map.get("player1bigFace2"),
 				map.get("player1smallBack1"), map.get("player1smallBack2"), map3.get("player1mainMenu"),
 				map3.get("player1raise"), map3.get("player1fold"), map3.get("player1call"), map3.get("player1bet"),
@@ -2254,13 +2254,13 @@ public class Engl extends Application {
 				map4.get("player1numberTurn"), map4.get("pot1"), map4.get("player2cash2"), map4.get("player1cash1"),
 				map4.get("player1numberRound"));
 
-		// Expérimentation
+		// ExpÃ©rimentation
 		// check();
 		// map6.get("player1pane").getChildren().addAll( map10.get("token1"),
 		// map10.get("token2"), map10.get("token3"), map10.get("token4"),
 		// map10.get("token5"));
 
-		// Définie la fonction du button de manuel
+		// DÃ©finie la fonction du button de manuel
 		map3.get("player1manual").setOnAction(e -> {
 			if (manualStage.isShowing()) {
 				manualStage.close();
@@ -2270,31 +2270,31 @@ public class Engl extends Application {
 			play();
 		});
 
-		// Définie la fonction du button de fold
+		// DÃ©finie la fonction du button de fold
 		map3.get("player1fold").setOnAction(e -> {
 			fold1();
 		});
 
-		// Définie la fonction du button de bet
+		// DÃ©finie la fonction du button de bet
 		map3.get("player1bet").setOnAction(e -> {
 			go();
 			betOff1 = false;
 			play();
 		});
 
-		// Définie la fonction du button de raise
+		// DÃ©finie la fonction du button de raise
 		map3.get("player1raise").setOnAction(e -> {
 			go();
 			play();
 		});
 
-		// Définie la fonction du button de check
+		// DÃ©finie la fonction du button de check
 		map3.get("player1check").setOnAction(e -> {
 			play();
 			checkOff1 = false;
 			playerId = 2;
 
-			// Bloque/débloque les buttons
+			// Bloque/dÃ©bloque les buttons
 			map3.get("player1fold").setDisable(true);
 			map3.get("player1call").setDisable(true);
 			map3.get("player1raise").setDisable(true);
@@ -2317,14 +2317,14 @@ public class Engl extends Application {
 				map4.get("player2numberTurn").setText("Turn: " + turnId);
 			}
 
-			// Mise à jour des labels
+			// Mise Ã  jour des labels
 			map4.get("player1turn").setText(player2Name + "'s turn");
 			map4.get("player2turn").setText(player2Name + "'s turn");
 			map6.get("player2pane").getChildren().addAll(map4.get("ask"));
 			map6.get("player1pane").getChildren().addAll(map4.get("wait"));
 		});
 
-		// Définie la fonction du button de call
+		// DÃ©finie la fonction du button de call
 		map3.get("player1call").setOnAction(e -> {
 			callOff1 = false;
 
@@ -2334,7 +2334,7 @@ public class Engl extends Application {
 			play();
 		});
 
-		// Pane vais toujours être centré
+		// Pane vais toujours Ãªtre centrÃ©
 		VBox vb = new VBox();
 		vb.setAlignment(Pos.CENTER);
 		HBox ap = new HBox();
@@ -2345,16 +2345,16 @@ public class Engl extends Application {
 		vb.setId("background");
 		mainScene = new Scene(vb, 1366, 720);
 
-		// Définie la fenêtre
+		// DÃ©finie la fenÃªtre
 		stage.setTitle("Poker - " + player1Name);
 		stage.setResizable(true);
 		stage.setScene(mainScene);
 	}
 
-	// Définie les conditions du deuxième joueur
+	// DÃ©finie les conditions du deuxiÃ¨me joueur
 	public void player2Conditions() {
 
-		// Ajoute les éléments de base (au début d'une joute)
+		// Ajoute les Ã©lÃ©ments de base (au dÃ©but d'une joute)
 		map6.get("player2pane").getChildren().addAll(map.get("player2bigFace1"), map.get("player2bigFace2"),
 				map.get("player2smallBack1"), map.get("player2smallBack2"), map3.get("player2mainMenu"),
 				map3.get("player2raise"), map3.get("player2fold"), map3.get("player2call"), map3.get("player2bet"),
@@ -2362,7 +2362,7 @@ public class Engl extends Application {
 				map4.get("player2numberTurn"), map4.get("pot2"), map4.get("player2cash1"), map4.get("player1cash2"),
 				map4.get("player2numberRound"));
 
-		// Définie la fonction du button de manuel
+		// DÃ©finie la fonction du button de manuel
 		map3.get("player2manual").setOnAction(e -> {
 			if (manualStage.isShowing()) {
 				manualStage.close();
@@ -2372,12 +2372,12 @@ public class Engl extends Application {
 			play();
 		});
 
-		// Définie la fonction du button de fold
+		// DÃ©finie la fonction du button de fold
 		map3.get("player2fold").setOnAction(e -> {
 			fold2();
 		});
 
-		// Définie la fonction du button de call
+		// DÃ©finie la fonction du button de call
 		map3.get("player2call").setOnAction(e -> {
 			callOff2 = false;
 
@@ -2387,26 +2387,26 @@ public class Engl extends Application {
 			play();
 		});
 
-		// Définie la fonction du button de raise
+		// DÃ©finie la fonction du button de raise
 		map3.get("player2raise").setOnAction(e -> {
 			go();
 			raiseOff2 = false;
 			play();
 		});
 
-		// Définie la fonction du button de bet
+		// DÃ©finie la fonction du button de bet
 		map3.get("player2bet").setOnAction(e -> {
 			go();
 			betOff2 = false;
 			play();
 		});
 
-		// Définie la fonction du button de check
+		// DÃ©finie la fonction du button de check
 		map3.get("player2check").setOnAction(e -> {
 			play();
 			checkOff2 = false;
 
-			// Bloque/débloque les buttons
+			// Bloque/dÃ©bloque les buttons
 			map3.get("player2call").setDisable(true);
 			map3.get("player2fold").setDisable(true);
 			map3.get("player2raise").setDisable(true);
@@ -2429,14 +2429,14 @@ public class Engl extends Application {
 				map4.get("player2numberTurn").setText("Turn: " + turnId);
 			}
 
-			// Mise à jour des labels
+			// Mise Ã  jour des labels
 			map4.get("player1turn").setText(player1Name + "'s turn");
 			map4.get("player2turn").setText(player1Name + "'s turn");
 			map6.get("player2pane").getChildren().remove(map4.get("ask"));
 			map6.get("player1pane").getChildren().remove(map4.get("wait"));
 		});
 
-		// Pane vais toujours être centré
+		// Pane vais toujours Ãªtre centrÃ©
 		VBox vb = new VBox();
 		vb.setAlignment(Pos.CENTER);
 		HBox ap = new HBox();
@@ -2447,7 +2447,7 @@ public class Engl extends Application {
 		vb.setId("background");
 		playe2scene = new Scene(vb, 1366, 720);
 
-		// Définie la fenêtre
+		// DÃ©finie la fenÃªtre
 		player2stage = new Stage();
 		player2stage.setScene(playe2scene);
 		player2stage.setTitle("Poker - " + player2Name);
@@ -2456,20 +2456,20 @@ public class Engl extends Application {
 		player2stage.show();
 	}
 
-	// Affiche/enlève le textField pour faire un bet ou pour 'raiser'
+	// Affiche/enlÃ¨ve le textField pour faire un bet ou pour 'raiser'
 	public void go() {
 		if (raiseId == 1) {
 			// Ajoute
 			map6.get("player" + playerId + "pane").getChildren().addAll(map4.get("help"), raiseAmount);
 			raiseId = 0;
 		} else {
-			// Enlève
+			// EnlÃ¨ve
 			map6.get("player" + playerId + "pane").getChildren().removeAll(map4.get("help"), raiseAmount);
 			raiseId = 1;
 		}
 	}
 
-	// Établie les valeurs lors de changement de tour
+	// Ã‰tablie les valeurs lors de changement de tour
 	public void restore() {
 		callOff1 = true;
 		callOff2 = true;
@@ -2507,14 +2507,14 @@ public class Engl extends Application {
 		map4.get("player1numberTurn").setText("Turn: " + turnId);
 		map4.get("player2numberTurn").setText("Turn: " + turnId);
 
-		// Définie l'endroit des 2 cartes
+		// DÃ©finie l'endroit des 2 cartes
 		map6.get("player1pane").getChildren().addAll(map.get("dealer1Card1"), map.get("dealer1Card2"),
 				map.get("dealer1Card3"));
 		map6.get("player2pane").getChildren().addAll(map.get("dealer2Card1"), map.get("dealer2Card3"),
 				map.get("dealer2Card2"));
 	}
 
-	// Deuxième tour pour le dealer
+	// DeuxiÃ¨me tour pour le dealer
 	public void secondTurn() {
 		turnId = 3;
 		restore();
@@ -2522,7 +2522,7 @@ public class Engl extends Application {
 		map4.get("player1numberTurn").setText("Turn: " + turnId);
 		map4.get("player2numberTurn").setText("Turn: " + turnId);
 
-		// Définie l'endroit des 3 cartes
+		// DÃ©finie l'endroit des 3 cartes
 		for (int i = 1; i < 3; i++) {
 			map.get("dealer" + i + "Card1").setLayoutX(367.2857143);
 			map.get("dealer" + i + "Card2").setLayoutX(530.1428571);
@@ -2532,7 +2532,7 @@ public class Engl extends Application {
 		map6.get("player2pane").getChildren().addAll(map.get("dealer2Card4"));
 	}
 
-	// Troisième tour pour le dealer
+	// TroisiÃ¨me tour pour le dealer
 	public void thirdTurn() {
 		restore();
 		turnId = 4;
@@ -2540,7 +2540,7 @@ public class Engl extends Application {
 		map4.get("player1numberTurn").setText("Turn: " + turnId);
 		map4.get("player2numberTurn").setText("Turn: " + turnId);
 
-		// Définie l'endroit des 4 cartes
+		// DÃ©finie l'endroit des 4 cartes
 		for (int i = 1; i < 3; i++) {
 			map.get("dealer" + i + "Card1").setLayoutX(285.8571428);
 			map.get("dealer" + i + "Card2").setLayoutX(448.7142857);
@@ -2556,7 +2556,7 @@ public class Engl extends Application {
 
 		numberPanes();
 
-		// Définie les propriétés des jetons
+		// DÃ©finie les propriÃ©tÃ©s des jetons
 		map9 = new HashMap<String, ArrayList<Integer>>();
 		map7 = new HashMap<String, ImageView>();
 		tokensVarNames = new String[] { "white", "red", "blue", "green", "black" };
@@ -2565,7 +2565,7 @@ public class Engl extends Application {
 		tokensLayoutX = new int[] { 90, 160, 230, 300, 370 };
 		tokensLayoutY = new ArrayList<Integer>();
 
-		// Créer les ArrayList pour les jetons par rapport aux nombre de jetons
+		// CrÃ©er les ArrayList pour les jetons par rapport aux nombre de jetons
 		for (int i = 1; i <= totalPlayers; i++) {
 			map9.put("player" + i + "numbersToken", new ArrayList<Integer>());
 			for (int j = 0; j < numbersTokens.length; j++) {
@@ -2573,7 +2573,7 @@ public class Engl extends Application {
 			}
 		}
 
-		// Créer le layoutY pour les jetons
+		// CrÃ©er le layoutY pour les jetons
 		max = 0;
 		for (int e : maxTokens) {
 			if (e > max) {
@@ -2586,11 +2586,11 @@ public class Engl extends Application {
 			inital = inital - 9;
 		}
 
-		// Créer les jetons
+		// CrÃ©er les jetons
 		for (int j = 0; j < tokensVarNames.length; j++) {
 			for (int i = 1; i <= totalPlayers; i++) {
 
-				// Créer les jetons pour chaque joueur
+				// CrÃ©er les jetons pour chaque joueur
 				for (int t = 1; t <= maxTokens[j]; t++) {
 					map7.put("player" + i + tokensVarNames[j] + t,
 							new ImageView(new Image(getClass().getResourceAsStream(tokensVarNames[j] + ".png"))));
@@ -2609,7 +2609,7 @@ public class Engl extends Application {
 
 	}
 
-	// Définie le nombre de jetons/argent pour les joueurs
+	// DÃ©finie le nombre de jetons/argent pour les joueurs
 	public void variables() {
 		map8 = new HashMap<String, Integer>();
 		for (int i = 0; i <= totalPlayers; i++) {
@@ -2617,7 +2617,7 @@ public class Engl extends Application {
 		}
 	}
 
-	// Fonction jamais utilisé, calcule le montant d'argent avec le nombre de
+	// Fonction jamais utilisÃ©, calcule le montant d'argent avec le nombre de
 	// jetons
 	public int calculateCash(int player) {
 		int total = 0;
@@ -2628,10 +2628,10 @@ public class Engl extends Application {
 		return total;
 	}
 
-	// Définie tout les labels utilisés pour le jeux
+	// DÃ©finie tout les labels utilisÃ©s pour le jeux
 	public void labels() {
 
-		// Définie les propriétés des buttons
+		// DÃ©finie les propriÃ©tÃ©s des buttons
 		map4 = new HashMap<String, Label>();
 		labelVarNames = new String[] { "warning", "turn", "help", "wait", "ask", "numberTurn", "numberRound",
 				"warning1", "waiting", "check", "pot1", "pot2", "player1cash1", "player1cash2", "player2cash1",
@@ -2649,7 +2649,7 @@ public class Engl extends Application {
 				950, 1180, 1180 };
 		labelLayoutY = new int[] { 630, 370, 555, 475, 408, 690, 670, 630, 200, 200, 15, 15, 15, 15, 15, 15, 630, 630 };
 
-		// Créer chaque labels
+		// CrÃ©er chaque labels
 		for (int j = 0; j < labelVarNames.length; j++) {
 			for (int i = 1; i <= totalPlayers; i++) {
 				// Pour chaque joueur (2 fois)
@@ -2684,20 +2684,20 @@ public class Engl extends Application {
 		map4.get("player1cash2").setId("pot");
 	}
 
-	// Définie tout les buttons utilisés pour le jeux
+	// DÃ©finie tout les buttons utilisÃ©s pour le jeux
 	public void buttons() {
 		map3 = new HashMap<String, Button>();
 		buttonVarNames = new String[] { "mainMenu", "manual", "call", "fold", "bet", "raise", "check", "nextRound" };
 		buttonNames = new String[] { "Main Menu", "", "Call", "Fold", "Bet", "Raise", "Check", "Next Round" };
 
 		for (int i = 1; i <= totalPlayers; i++) {
-			// Créer chaque button
+			// CrÃ©er chaque button
 			for (int j = 0; j < buttonVarNames.length; j++) {
 				map3.put("player" + i + buttonVarNames[j], new Button(buttonVarNames[j]));
 				map3.get("player" + i + buttonVarNames[j]).setText(buttonNames[j]);
 			}
 
-			// Définie les fonctions du button du menu principal
+			// DÃ©finie les fonctions du button du menu principal
 			map3.get("player" + i + "mainMenu").setOnAction(e -> {
 				play();
 				restart();
@@ -2728,12 +2728,12 @@ public class Engl extends Application {
 			map3.get("player" + i + "nextRound").setLayoutY(330);
 		}
 
-		// Définie les fonctions du button pour jouer une autre fois
+		// DÃ©finie les fonctions du button pour jouer une autre fois
 		map3.get("player1nextRound").setOnAction(e -> {
 			play();
 			click1 = true;
 
-			// Enlève l'avertissement
+			// EnlÃ¨ve l'avertissement
 			if (tooMuch == false) {
 				map6.get("player" + playerId + "pane").getChildren().removeAll(map4.get("tooMuch"));
 				tooMuch = true;
@@ -2743,7 +2743,7 @@ public class Engl extends Application {
 				empty = true;
 			}
 
-			// Si l'autre button a été actionné, enlève tout
+			// Si l'autre button a Ã©tÃ© actionnÃ©, enlÃ¨ve tout
 			if (click2) {
 				for (int i = 1; i <= 2; i++) {
 					map6.get("player1pane").getChildren().removeAll(map.get("player1smallBack" + i));
@@ -2756,7 +2756,7 @@ public class Engl extends Application {
 				map6.get("player1pane").getChildren().remove(map4.get("check"));
 			} else {
 
-				// Enlève les cartes du joueur et mets un avis sur chaque écran
+				// EnlÃ¨ve les cartes du joueur et mets un avis sur chaque Ã©cran
 				for (int i = 1; i <= 5; i++) {
 					map6.get("player1pane").getChildren().removeAll(map.get("dealer1Card" + i));
 				}
@@ -2773,7 +2773,7 @@ public class Engl extends Application {
 			play();
 			click2 = true;
 
-			// Enlève l'avertissement
+			// EnlÃ¨ve l'avertissement
 			if (tooMuch == false) {
 				map6.get("player" + playerId + "pane").getChildren().removeAll(map4.get("tooMuch"));
 				tooMuch = true;
@@ -2783,7 +2783,7 @@ public class Engl extends Application {
 				empty = true;
 			}
 
-			// Si l'autre button a été actionné, enlève tout
+			// Si l'autre button a Ã©tÃ© actionnÃ©, enlÃ¨ve tout
 			if (click1) {
 				for (int i = 1; i <= 2; i++) {
 					map6.get("player2pane").getChildren().removeAll(map.get("player2smallBack" + i));
@@ -2800,7 +2800,7 @@ public class Engl extends Application {
 
 			} else {
 
-				// Enlève les cartes du joueur et mets un avis sur chaque écran
+				// EnlÃ¨ve les cartes du joueur et mets un avis sur chaque Ã©cran
 				for (int i = 1; i <= 5; i++) {
 					map6.get("player2pane").getChildren().removeAll(map.get("dealer2Card" + i));
 				}
@@ -2815,7 +2815,7 @@ public class Engl extends Application {
 		});
 	}
 
-	// Rétablie les valeurs lorsque le joueur vais dans le menu principal
+	// RÃ©tablie les valeurs lorsque le joueur vais dans le menu principal
 	public void restart() {
 		pot = 0;
 		bet = 10;
@@ -2841,7 +2841,7 @@ public class Engl extends Application {
 		checkOff2 = true;
 	}
 
-	// Réinitialise les variables pour jouer un autre ronde
+	// RÃ©initialise les variables pour jouer un autre ronde
 	public void clear() {
 		restore();
 		map3.get("player1check").setDisable(true);
@@ -2875,23 +2875,23 @@ public class Engl extends Application {
 		map3.get("player1bet").setDisable(false);
 	}
 
-	// Détermines tout les cartes (devant/arrière/petite/grande) utilisés dans
+	// DÃ©termines tout les cartes (devant/arriÃ¨re/petite/grande) utilisÃ©s dans
 	// une ronde
 	public void cards() {
 
 		premierDebut();
 
-		// Références aux images de cartes
+		// RÃ©fÃ©rences aux images de cartes
 		map = new HashMap<String, ImageView>();
 
 		x = 0;
 		for (int j = 1; j <= totalPlayers; j++) {
-			// Définie tout les cartes pour tous les joueurs
+			// DÃ©finie tout les cartes pour tous les joueurs
 			for (int i = 1; i < 53; i++) {
 				map.put("player" + j + "card" + i,
 						new ImageView(new Image(getClass().getResourceAsStream(i + ".png"))));
 			}
-			// Définie les cartes de dot
+			// DÃ©finie les cartes de dot
 			for (int i = 1; i <= totalPlayers; i++) {
 				map.put("player" + j + "smallBack" + i,
 						new ImageView(new Image(getClass().getResourceAsStream("back.png"))));
@@ -2909,7 +2909,7 @@ public class Engl extends Application {
 			map.get("player" + j + "bigBack1").setLayoutX(456.3884);
 			map.get("player" + j + "bigBack2").setLayoutX(703);
 
-			// Définie les carte de faces pour les joueurs
+			// DÃ©finie les carte de faces pour les joueurs
 			for (int i = 1; i <= totalPlayers; i++) {
 				map.put("player" + j + "bigFace" + i, new ImageView(
 						new Image(getClass().getResourceAsStream(map2.get("resultat" + j).get(i - 1) + ".png"))));
@@ -2927,7 +2927,7 @@ public class Engl extends Application {
 			map.get("player" + j + "bigFace1").setLayoutX(456.3884);
 			map.get("player" + j + "bigFace2").setLayoutX(703);
 
-			// Définie les cartes pour le dealer
+			// DÃ©finie les cartes pour le dealer
 			for (int i = 0; i < 5; i++) {
 				x = x + 1;
 				dealer = "player" + j + "card" + map2.get("dealerResultat").get(i);
@@ -2952,7 +2952,7 @@ public class Engl extends Application {
 		}
 	}
 
-	// Selection de nombre aléatoire pour les cartes
+	// Selection de nombre alÃ©atoire pour les cartes
 	public void selection() {
 		rand = 1 + (int) (Math.random() * ((52 - 1) + 1));
 		while (map2.get("resultat1").contains(rand) || map2.get("resultat2").contains(rand)
@@ -2961,7 +2961,7 @@ public class Engl extends Application {
 		}
 	}
 
-	// Détermine les cartes des joueurs
+	// DÃ©termine les cartes des joueurs
 	public void premierDebut() {
 		// Garde les cartes des joueurs
 		map2 = new HashMap<String, ArrayList<Integer>>();
