@@ -170,7 +170,7 @@ public class Engl extends Application {
 		demande = new Main();
 
 		// Son pour jeter
-		swoosh = new MediaPlayer(new Media(new File("swoosh.mp3").toURI().toString()));
+		swoosh = new MediaPlayer(new Media(getClass().getResource("/application/swoosh.mp3").toExternalForm()));
 
 		// Déclaration de multiples variables importantes
 		root = new Pane();
@@ -201,10 +201,10 @@ public class Engl extends Application {
 		});
 
 		// Son des buttons
-		buttonSound = new MediaPlayer(new Media(new File("click.mp3").toURI().toString()));
+		buttonSound = new MediaPlayer(new Media(getClass().getResource("/application/click.mp3").toExternalForm()));
 
 		// Son lorsque tu tape
-		writeSound = new MediaPlayer(new Media(new File("type.mp3").toURI().toString()));
+		writeSound = new MediaPlayer(new Media(getClass().getResource("/application/type.mp3").toExternalForm()));
 
 		// TextField1
 		textField1 = new TextField();
@@ -212,7 +212,7 @@ public class Engl extends Application {
 		textField1.setLayoutY(35.0);
 		textField1.setAlignment(Pos.CENTER);
 		textField1.textProperty().addListener((ov, oldValue, newValue) -> {
-			MediaPlayer md1 = new MediaPlayer(new Media(new File("type.mp3").toURI().toString()));
+			MediaPlayer md1 = new MediaPlayer(new Media(getClass().getResource("/application/type.mp3").toExternalForm()));
 			// Joue un son lorsque tu tape
 			md1.play();
 			// Rends la première majuscule
@@ -227,7 +227,7 @@ public class Engl extends Application {
 		textField2.setLayoutX(50.0);
 		textField2.setLayoutY(100.0);
 		textField2.textProperty().addListener((ov, oldValue, newValue) -> {
-			MediaPlayer md1 = new MediaPlayer(new Media(new File("type.mp3").toURI().toString()));
+			MediaPlayer md1 = new MediaPlayer(new Media(getClass().getResource("/application/type.mp3").toExternalForm()));
 			// Joue un son lorsque tu tape
 			md1.play();
 			// Rends la première majuscule
